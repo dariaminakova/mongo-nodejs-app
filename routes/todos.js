@@ -3,7 +3,7 @@ const Todo = require("../models/todo");
 const router = Router();
 
 router.get("/", async (req, res) => {
-  const todos = await Todo.find({});
+  const todos = await Todo.find({}).lean();
   res.render("index", { title: "todos list", isIndex: true, todos });
 });
 
